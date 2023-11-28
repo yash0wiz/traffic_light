@@ -1,0 +1,33 @@
+import java.util.concurrent.TimeUnit;
+
+public class TrafficLightSimulator {
+    public static void main(String[] args) {
+        simulateTrafficLight();
+    }
+
+    static void simulateTrafficLight() {
+        System.out.println("Traffic Light Simulation:");
+
+        while (true) {
+            // Red Light (Stop)
+            System.out.println("Red Light - Stop");
+            sleepSeconds(5);
+
+            // Green Light (Go)
+            System.out.println("Green Light - Go");
+            sleepSeconds(5);
+
+            // Yellow Light (Prepare to Stop)
+            System.out.println("Yellow Light - Prepare to Stop");
+            sleepSeconds(2);
+        }
+    }
+
+    static void sleepSeconds(int seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
